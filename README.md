@@ -47,7 +47,7 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 ## See Also
 
-### Lightstreamer Adapters Needed by These Clients
+### Lightstreamer Adapters Needed by This Client
 <!-- START RELATED_ENTRIES -->
 
 * [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)
@@ -59,6 +59,8 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 * [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 * [Lightstreamer - Stock-List Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Stocklist-client-javascript)
+* [Lightstreamer - Basic Stock-List Demo - .NET Client](https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-dotnet)
+* [Lightstreamer - Quickstart Example - .NET Client](https://github.com/Lightstreamer/Lightstreamer-example-Quickstart-client-dotnet)
 
 ## Lightstreamer Compatibility Notes
 
