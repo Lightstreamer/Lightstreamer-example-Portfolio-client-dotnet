@@ -17,7 +17,7 @@ The updates are printed on the console and the columns show are: stock name, las
 
 ### The Code
 
-In particular, the code that handles the two level subscriptions is located in the TestPortfolioListenerForExtended class (TestTableListener.cs), while the Portfolio class (Portfolio.cs) simply assembles the information from the first and second level subscriptions.
+In particular, the code that handles the two level subscriptions is located in the *TestPortfolioListenerForExtended* class (`TestTableListener.cs`), while the *Portfolio* class (`Portfolio.cs`) simply assembles the information from the first and second level subscriptions.
 The sample program logs updates and general messages on the console.
 
 <!-- END DESCRIPTION lightstreamer-example-portfolio-client-dotnet -->
@@ -36,7 +36,7 @@ Please check out those projects and follow the installation instructions provide
 
 To build and install a version of this demo, pointing to your local Lightstreamer Server instance, follow the steps below.
 
-* Exactly as in the previous section, both the *PORTFOLIO_ADAPTER* (see the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)), and the *QUOTE_ADAPTER* (see the [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-java)). Therefore, as a prerequisite, the full version of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please follow the instruction in [Install the Portfolio Demo](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java#install-the-portfolio-demo) to install it.
+* Exactly as in the previous section, both the *PORTFOLIO_ADAPTER* (see the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)), and the *QUOTE_ADAPTER* (see the [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-java)) are a prerequisite. The full version of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please follow the instruction in [Install the Portfolio Demo](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java#install-the-portfolio-demo) to install it.
 * Create a new C# project: from the "New Project..." wizard, choose the "Console Application" template.
 * Get the `DotNetClient_N2.dll` and `DotNetClient_N2.pdb` files from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://www.lightstreamer.com/download), and copy them into a `lib` folder specifically created in your project.
 * From the "Solution Explorer", delete the default `Program.cs`.
