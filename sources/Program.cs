@@ -94,6 +94,11 @@ namespace TwoLevelPush_Example
 
 
             Thread.Sleep(5000);
+
+            while (true)
+            {
+                Thread.Sleep(20);
+            }
         }
     }
 }

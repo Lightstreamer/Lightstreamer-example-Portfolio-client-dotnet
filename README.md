@@ -1,6 +1,5 @@
 # Lightstreamer - Portfolio Demo - .NET Client
 
-This project contains a very simple implementation of the *Portfolio Demo* which shows how the [Lightstreamer .NET Client API](http://www.lightstreamer.com/docs/client_dotnet_api/frames.html) can be used to implement item subscriptions in COMMAND mode with "two-level push".
 
 More details about COMMAND mode subscriptions and "two-level push" in section "3.2.3 COMMAND Mode" of the [General Concepts.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf) documentation.
 
@@ -38,12 +37,14 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 * Exactly as in the previous section, both the *PORTFOLIO_ADAPTER* (see the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)), and the *QUOTE_ADAPTER* (see the [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-java)) are a prerequisite. The full version of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please follow the instruction in [Install the Portfolio Demo](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java#install-the-portfolio-demo) to install it.
 * Create a new C# project: from the "New Project..." wizard, choose the "Console Application" template.
-* Get the `DotNetClient_N2.dll` and `DotNetClient_N2.pdb` files from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://www.lightstreamer.com/download), and copy them into a `lib` folder specifically created in your project.
-* From the "Solution Explorer", delete the default `Program.cs`.
 * Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
-* Add a reference to the Lightstreamer .NET Client library: go to the "Browse" tab of the "Add Reference" dialog and point to the `DotNetClient_N2.dll` file in the `lib` folder.
-* From the Build menu, choose "Build Solution".
-* Run the demo. The host name and the port number of the Lightstreamer server have to be passed to the application as command line arguments.<BR/>
+* From the "Solution Explorer", delete the default `Program.cs`.
+* You should complete this project with the Lightstreamer .NET PCL Client library, to be used for the build process, trough NuGet. Follow these steps:
+	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
+	* In the Search text box enter `Lightstreamer`
+	* Choose Lightstreamer.DotNet.Client then click `Install` and then `Ok`
+	* Check out that among the References of your project Lightstreamer_DotNet_PCL_Client was added.
+* Build solutions and run the demo. The host name and the port number of the Lightstreamer server have to be passed to the application as command line arguments.<BR/>
 
 ## See Also
 
@@ -64,4 +65,5 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer .NET Client library version 2.1 or newer.
+- Compatible with Lightstreamer .NET PCL Client library version 3.0.0 or newer.
+- For Lightstreamer Allegro (+ .NET Client API support), Presto, Vivace.
