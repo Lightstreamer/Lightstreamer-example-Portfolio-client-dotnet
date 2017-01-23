@@ -1,5 +1,6 @@
 # Lightstreamer - Portfolio Demo - .NET Client
 
+This project contains a very simple implementation of the *Portfolio Demo* which shows how the [Lightstreamer .NET PCL Client API](http://www.lightstreamer.com/api/ls-pcl-client/latest/) can be used to implement item subscriptions in COMMAND mode with "two-level push".
 
 More details about COMMAND mode subscriptions and "two-level push" in section "3.2.3 COMMAND Mode" of the [General Concepts.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf) documentation.
 
