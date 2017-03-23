@@ -9,7 +9,7 @@ More details about COMMAND mode subscriptions and "two-level push" in section "3
 ## Details
 
 [![screenshot](screen_large.jpg)](http://demos.lightstreamer.com/DotNetPortfolioDemo/deploy_push.zip)<br>
-###[![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/DotNetPortfolioDemo/deploy_push.zip)<br>
+### [![](http://demos.lightstreamer.com/site/img/play.png) View live demo](http://demos.lightstreamer.com/DotNetPortfolioDemo/deploy_push.zip)<br>
 (download deploy_push.zip; unzip it; double click on "LaunchMe" shortcut)
 
 In the *Basic Portfolio Demo*, a virtual stock portfolio, shared among all the connected users, is handled. This demo application extends the *Basic Portfolio Demo* by combining live stock prices, [StockList Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Stocklist-adapter-java), as in the *Stock-List Demos* with the portfolio contents, [Portfolio Data Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-java).
