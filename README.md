@@ -28,6 +28,7 @@ If you want to install a version of this demo pointing to your local Lightstream
 
 * Note that, as prerequisite, the [Lightstreamer - Stock- List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Stocklist-adapter-java) and the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java) have to be deployed on your local Lightstreamer Server instance. 
 Please check out those projects and follow the installation instructions provided with them.
+* Since the app is an example of <**>Framework-Dependent Deployment (FDD)<**> relies on the presence of a shared system-wide version of .NET Core on the target system.
 * Launch Lightstreamer Server.
 * Download the `deploy.zip` file that you can find in the [deploy release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-dotnet/releases) of this project and extract the `deploy_local` folder.
 * Execute the `LaunchMe.bat`.
@@ -38,8 +39,8 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 * Exactly as in the previous section, both the *PORTFOLIO_ADAPTER* (see the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)), and the *QUOTE_ADAPTER* (see the [Lightstreamer - Stock-List Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-java)) are a prerequisite. The full version of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java) has to be deployed on your local Lightstreamer Server instance. Please follow the instruction in [Install the Portfolio Demo](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java#install-the-portfolio-demo) to install it.
 * Create a new C# project: from the "New Project..." wizard, choose the ".NET Core" and then "App Console" template.
-* Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
 * From the "Solution Explorer", delete the default `Program.cs`.
+* Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
 * You should complete this project with the Lightstreamer .NET Standard Client library, to be used for the build process, trough NuGet. Follow these steps:
 	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
 	* In the Search text box enter `Lightstreamer`
