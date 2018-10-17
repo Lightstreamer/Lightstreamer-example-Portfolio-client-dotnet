@@ -30,7 +30,7 @@ If you want to install a version of this demo pointing to your local Lightstream
 Please check out those projects and follow the installation instructions provided with them.
 * Launch Lightstreamer Server.
 * Download the `deploy.zip` file that you can find in the [deploy release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-dotnet/releases) of this project and extract the `deploy_local` folder.
-* Execute the `LaunchMe` shortcut.
+* Execute the `LaunchMe.bat`.
 
 ## Build
 
