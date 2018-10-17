@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "portfolio-sources": {
+      "commandName": "Project",
+      "commandLineArgs": "push.lightstreamer.com 80"
+    }
+  }
+}

@@ -16,7 +16,7 @@
 */
 #endregion License
 
-using Lightstreamer.DotNet.Client;
+using Lightstreamer.DotNetStandard.Client;
 using System;
 
 namespace TwoLevelPush_Example
