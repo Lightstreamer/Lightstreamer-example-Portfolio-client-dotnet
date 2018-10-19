@@ -45,9 +45,13 @@ namespace TwoLevelPush_Example
 
             Thread.Sleep(2000);
 
-            ConnectionInfo connInfo = new ConnectionInfo();
-            connInfo.PushServerUrl = "http://" + pushServerHost + ":" + pushServerPort;
-            connInfo.Adapter = "DEMO";
+            ConnectionInfo connInfo = new ConnectionInfo()
+            {
+                PushServerUrl = "http://" + pushServerHost + ":" + pushServerPort,
+                Adapter = "DEMO",
+                ConnectTimeoutMillis = 3500,
+                ReadTimeoutMillis = 8000
+            };
             
             Console.WriteLine("Opening Lightstreamer connection (" + pushServerHost + ":" + pushServerPort +")");
 
