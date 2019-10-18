@@ -16,18 +16,19 @@
 */
 #endregion License
 
-using Lightstreamer.DotNetStandard.Client;
+
+using com.lightstreamer.client;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace TwoLevelPush_Example
 {
     class Program
     {
+
+        public static LightstreamerClient myClient;
+
         static void Main(string[] args)
         {
 
@@ -44,32 +45,26 @@ namespace TwoLevelPush_Example
             int pushServerPort = Int32.Parse(args[1]);
 
             Thread.Sleep(2000);
-
-            ConnectionInfo connInfo = new ConnectionInfo()
+            if ( pushServerPort > 0 )
             {
-                PushServerUrl = "http://" + pushServerHost + ":" + pushServerPort,
-                Adapter = "DEMO",
-                ConnectTimeoutMillis = 3500,
-                ReadTimeoutMillis = 8000
-            };
+                Console.WriteLine("Opening Lightstreamer connection (" + pushServerHost + ":" + pushServerPort + ")");
+                myClient = new LightstreamerClient("http://" + pushServerHost + ":" + pushServerPort, "DEMO");
+            } else
+            {
+                Console.WriteLine("Opening Lightstreamer connection (" + pushServerHost + ")");
+                myClient = new LightstreamerClient("https://" + pushServerHost, "DEMO");
+            }
             
-            Console.WriteLine("Opening Lightstreamer connection (" + pushServerHost + ":" + pushServerPort +")");
-
-            LSClient myClient = new LSClient();
             TestConnectionListener myConnectionListener = new TestConnectionListener();
-            try {
-                myClient.OpenConnection(connInfo, myConnectionListener);
-            } catch (PushUserException eu)
+            myClient.addListener(myConnectionListener);
+
+            try
+            {
+                myClient.connect();
+            }
+            catch (Exception eu)
             {
                 Console.WriteLine("Error: " + eu.Message + ". Exit.");
-
-                Thread.Sleep(7000);
-
-                return;
-            }
-            catch (PushConnException ec)
-            {
-                Console.WriteLine("Error: " + ec.Message + ". Exit.");
 
                 Thread.Sleep(7000);
 
@@ -78,23 +73,21 @@ namespace TwoLevelPush_Example
 
             while (!myConnectionListener.isSessionStarted())
             {
-                Thread.Sleep(700);
+                Thread.Sleep(70);
             }
 
-            ExtendedTableInfo tableInfo = new ExtendedTableInfo(
-                        new String[] { "portfolio1" },
-                        "COMMAND",
-                        new String[] { "key", "command", "qty" },
-                        true
-                        );
+            Console.WriteLine("Go for the subscribe.");
 
-            tableInfo.DataAdapter = "PORTFOLIO_ADAPTER";
+            Subscription sub = new Subscription("COMMAND", "portfolio1", new String[] { "key", "command", "qty" });
 
-            SubscribedTableKey tableRef = myClient.SubscribeTable(
-                tableInfo,
-                new TestPortfolioListenerForExtended(myClient, "portfolio1"),
-                true
-                );
+            sub.DataAdapter = "PORTFOLIO_ADAPTER";
+            sub.RequestedSnapshot = "yes";
+            sub.CommandSecondLevelDataAdapter = "QUOTE_ADAPTER";
+            sub.CommandSecondLevelFields = new String[] { "stock_name", "last_price", "time" }; //the key values from the 1st level are used as item names for the second level
+
+            sub.addListener(new SystemOutSubscriptionListener(myClient, "portfolio1"));
+
+            myClient.subscribe(sub);
 
 
             Thread.Sleep(5000);

@@ -16,13 +16,13 @@
 */
 #endregion License
 
-using Lightstreamer.DotNetStandard.Client;
+using com.lightstreamer.client;
 using System;
 
 namespace TwoLevelPush_Example
 {
 
-    class TestConnectionListener : IConnectionListener
+    class TestConnectionListener : ClientListener
     {
         private long bytes = 0;
 
@@ -32,68 +32,7 @@ namespace TwoLevelPush_Example
 
         public void OnConnectionEstablished()
         {
-            Console.WriteLine("connection established");
-        }
 
-        public void OnSessionStarted(bool isPolling)
-        {
-            if (isPolling)
-            {
-                Console.WriteLine("smart polling session started");
-            }
-            else
-            {
-                Console.WriteLine("streaming session started");
-            }
-
-            sessionStarted = true;
-        }
-
-        public void OnNewBytes(long newBytes)
-        {
-            this.bytes += newBytes;
-        }
-
-        public void OnDataError(PushServerException e)
-        {
-            Console.WriteLine("data error");
-            Console.WriteLine(e);
-        }
-
-        public void OnActivityWarning(bool warningOn)
-        {
-            if (warningOn)
-            {
-                Console.WriteLine("connection stalled");
-            }
-            else
-            {
-                Console.WriteLine("connection no longer stalled");
-            }
-        }
-
-        public void OnClose()
-        {
-            Console.WriteLine("total bytes: " + bytes);
-
-            sessionStarted = false;
-        }
-
-        public void OnEnd(int cause)
-        {
-            Console.WriteLine("connection forcibly closed");
-        }
-
-        public void OnFailure(PushServerException e)
-        {
-            Console.WriteLine("server failure");
-            Console.WriteLine(e);
-        }
-
-        public void OnFailure(PushConnException e)
-        {
-            Console.WriteLine("connection failure");
-            Console.WriteLine(e);
         }
 
         public bool isSessionStarted()
@@ -101,6 +40,53 @@ namespace TwoLevelPush_Example
             return sessionStarted;
         }
 
+        public void onListenEnd(LightstreamerClient client)
+        {
+            // throw new NotImplementedException();
+        }
+
+        public void onListenStart(LightstreamerClient client)
+        {
+            // throw new NotImplementedException();
+        }
+
+        public void onServerError(int errorCode, string errorMessage)
+        {
+            Console.WriteLine("Server error: " + errorMessage + " (" + errorCode + ").");
+            sessionStarted = false;
+        }
+
+        public void onStatusChange(string status)
+        {
+            Console.WriteLine("Status changed: " + status + ".");
+            if (status.StartsWith("CONNECTED:"))
+            {
+                sessionStarted = true;
+                if (status.EndsWith("POLLING"))
+                {
+                    Console.WriteLine("Warn: polling session!!!!!!!!!!!!!");
+                }
+            }
+        }
+
+        public void onPropertyChange(string property)
+        {
+            Console.WriteLine("Property changed: " + property + ".");
+            if (property.Equals("sessionId"))
+            {
+                if (!Program.myClient.connectionDetails.SessionId.Equals(""))
+                {
+                    Console.WriteLine("New Session ID: " + Program.myClient.connectionDetails.SessionId + ".");
+                }
+            }
+            if (property.Equals("currentConnectTimeout"))
+            {
+                if (Program.myClient.connectionOptions.CurrentConnectTimeout > 0)
+                {
+                    Console.WriteLine("New Connect Timeout: " + Program.myClient.connectionOptions.CurrentConnectTimeout + ".");
+                }
+            }
+        }
     }
 
 }
