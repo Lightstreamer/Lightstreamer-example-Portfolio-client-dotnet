@@ -48,7 +48,7 @@ To build and install a version of this demo, pointing to your local Lightstreame
 * Create a new C# project: from the "New Project..." wizard, choose the ".NET Core" and then "App Console" template.
 * From the "Solution Explorer", delete the default `Program.cs`.
 * Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
-* You should complete this project with the Lightstreamer .NET Standard Client library, to be used for the build process, trough NuGet. Follow these steps:
+* You should complete this project with the [Lightstreamer .NET Standard Client library](https://www.nuget.org/packages/Lightstreamer.DotNetStandard.Client/5.0.0-beta), to be used for the build process, trough NuGet. Follow these steps:
 	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
 	* In the Search text box enter `Lightstreamer` and be sure to flag the *Include preliminary version* box
 	* Choose the Lightstreamer.DotNetStandard.Client last version then click `Install` and then `Ok`
