@@ -50,7 +50,7 @@ To build and install a version of this demo, pointing to your local Lightstreame
 * Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
 * You should complete this project with the [Lightstreamer .NET Standard Client library](https://www.nuget.org/packages/Lightstreamer.DotNetStandard.Client/5.0.0-beta), to be used for the build process, trough NuGet. Follow these steps:
 	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
-	* In the Search text box enter `Lightstreamer` and be sure to flag the *Include preliminary version* box
+	* In the Search text box enter `Lightstreamer` and be sure to flag the *Include preliminary version* check-box
 	* Choose the Lightstreamer.DotNetStandard.Client last version then click `Install` and then `Ok`
 	* Check out that among the References of your project Lightstreamer_DotNet_Standard_Client was added.
 * Build solutions and run the demo. The host name and the port number of the Lightstreamer server have to be passed to the application as command line arguments.<BR/>
