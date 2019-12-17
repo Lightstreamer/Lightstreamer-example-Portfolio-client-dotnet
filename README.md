@@ -1,6 +1,6 @@
 # Lightstreamer - Portfolio Demo - .NET Client
 
-This project contains a very simple .NET Core console application implementing the *Portfolio Demo* which shows how the [Lightstreamer .NET Standard Client API](https://lightstreamer.com/temp/temp_dotnet_unified_docs/) can be used to implement item subscriptions in COMMAND mode with "two-level push".
+This project contains a very simple .NET Core console application implementing the *Portfolio Demo* which shows how the [Lightstreamer .NET Standard Client API](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/) can be used to implement item subscriptions in COMMAND mode with "two-level push".
 This example uses a library version that support the Unified Client API model (since Lightstreamer .NET Standard API 5.0.0) and therefore the explicit management of the second level of the COMMAND subscription mode. 
 
 You can find more details about COMMAND mode subscriptions and "two-level push" in section "3.2.3 COMMAND Mode" of the [General Concepts.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf) documentation.
@@ -19,12 +19,12 @@ The updates are printed on the console and the columns show are: stock name, las
 ### The Code
 
 The `Program.cs` source code file describes the main flow of the application, very simple, which involves the following sequence:
-* creation of a [LightstreamerClient](https://lightstreamer.com/temp/temp_dotnet_unified_docs/api/com.lightstreamer.client.LightstreamerClient.html) instance;
-* add a custom implmentation of [ClientListener](https://lightstreamer.com/temp/temp_dotnet_unified_docs/api/com.lightstreamer.client.ClientListener.html) interface described in the `TestConnectionListener.cs` source code file;
-* call [connect()](https://lightstreamer.com/temp/temp_dotnet_unified_docs/api/com.lightstreamer.client.LightstreamerClient.html#com_lightstreamer_client_LightstreamerClient_connect) method trying to set up a client session with the specified server;
+* creation of a [LightstreamerClient](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/api/com.lightstreamer.client.LightstreamerClient.html) instance;
+* add a custom implmentation of [ClientListener](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/api/com.lightstreamer.client.ClientListener.html) interface described in the `TestConnectionListener.cs` source code file;
+* call [connect()](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/api/com.lightstreamer.client.LightstreamerClient.html#com_lightstreamer_client_LightstreamerClient_connect) method trying to set up a client session with the specified server;
 * wait for client session go active;
-* creation of a [Subscription](https://lightstreamer.com/temp/temp_dotnet_unified_docs/api/com.lightstreamer.client.Subscription.html) containing 1 item, subscribed to in COMMAND mode. Each added row automatically provokes an underlying subscription to a sub-item in MERGE mode, to get the real-time price for that specific stock from another feed (the same as the Stock-List Demos). When a row is deleted, the underlying sub-item is automatically unsubscribed from.
-* add a custom implementation of [SubscriptionListener](https://lightstreamer.com/temp/temp_dotnet_unified_docs/api/com.lightstreamer.client.SubscriptionListener.html) interface described in the `SystemOutSubscriptionListener.cs` source code file.
+* creation of a [Subscription](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/api/com.lightstreamer.client.Subscription.html) containing 1 item, subscribed to in COMMAND mode. Each added row automatically provokes an underlying subscription to a sub-item in MERGE mode, to get the real-time price for that specific stock from another feed (the same as the Stock-List Demos). When a row is deleted, the underlying sub-item is automatically unsubscribed from.
+* add a custom implementation of [SubscriptionListener](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/api/com.lightstreamer.client.SubscriptionListener.html) interface described in the `SystemOutSubscriptionListener.cs` source code file.
 
 
 <!-- END DESCRIPTION lightstreamer-example-portfolio-client-dotnet -->
@@ -50,9 +50,9 @@ To build and install a version of this demo, pointing to your local Lightstreame
 * Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
 * You should complete this project with the [Lightstreamer .NET Standard Client library](https://www.nuget.org/packages/Lightstreamer.DotNetStandard.Client/5.0.0-beta), to be used for the build process, trough NuGet. Follow these steps:
 	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
-	* In the Search text box enter `Lightstreamer` and be sure to flag the *Include preliminary version* check-box
-	* Choose the Lightstreamer.DotNetStandard.Client last version then click `Install` and then `Ok`
-	* Check out that among the References of your project Lightstreamer_DotNet_Standard_Client was added.
+	* In the Search text box enter `Lightstreamer`
+	* Choose the <b>Lightstreamer.DotNetStandard.Client</b> last version then click `Install` and then `Ok`
+	* Check out that among the References of your project <i>Lightstreamer_DotNet_Client_Unified</i> was added.
 * Build solutions and run the demo. The host name and the port number of the Lightstreamer server have to be passed to the application as command line arguments.<BR/>
 
 ## See Also
