@@ -3,7 +3,7 @@
 This project contains a very simple .NET Core console application implementing the *Portfolio Demo* which shows how the [Lightstreamer .NET Standard Client API](https://lightstreamer.com/api/ls-dotnetstandard-client/latest/) can be used to implement item subscriptions in COMMAND mode with "two-level push".
 This example uses a library version that support the Unified Client API model (since Lightstreamer .NET Standard API 5.0.0) and therefore the explicit management of the second level of the COMMAND subscription mode. 
 
-You can find more details about COMMAND mode subscriptions and "two-level push" in section "3.2.3 COMMAND Mode" of the [General Concepts.pdf](http://www.lightstreamer.com/docs/base/General%20Concepts.pdf) documentation.
+You can find more details about COMMAND mode subscriptions and "two-level push" in section "3.2.3 COMMAND Mode" of the [General Concepts.pdf](https://lightstreamer.com/docs/ls-server/latest/General%20Concepts.pdf) documentation.
 
 <!-- START DESCRIPTION lightstreamer-example-portfolio-client-dotnet -->
 
