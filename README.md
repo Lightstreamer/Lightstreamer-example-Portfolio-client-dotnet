@@ -48,7 +48,7 @@ To build and install a version of this demo, pointing to your local Lightstreame
 * Create a new C# project: from the "New Project..." wizard, choose the ".NET Core" and then "App Console" template.
 * From the "Solution Explorer", delete the default `Program.cs`.
 * Add all the files provided in the `sources` folder of this project; from the "Add -> Existing Item" dialog.
-* You should complete this project with the [Lightstreamer .NET Standard Client library](https://www.nuget.org/packages/Lightstreamer.DotNetStandard.Client/5.0.0-beta), to be used for the build process, trough NuGet. Follow these steps:
+* You should complete this project with the [Lightstreamer .NET Standard Client library](https://www.nuget.org/packages/Lightstreamer.DotNetStandard.Client), to be used for the build process, trough NuGet. Follow these steps:
 	* In the "Solution Explorer" tab, right click on the project and choose `Manage NuGet Packages ...`
 	* In the Search text box enter `Lightstreamer`
 	* Choose the <b>Lightstreamer.DotNetStandard.Client</b> last version then click `Install` and then `Ok`
@@ -67,7 +67,7 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 ### Related Projects
 
-* [Lightstreamer .NET Standard Client SDK](https://github.com/Lightstreamer/Lightstreamer-lib-client-dotnet)
+* [Lightstreamer .NET Standard Client SDK](https://github.com/Lightstreamer/Lightstreamer-lib-client-haxe)
 * [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 * [Lightstreamer - Stock-List Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Stocklist-client-javascript)
 * [Lightstreamer - Basic Stock-List Demo - .NET Client](https://github.com/Lightstreamer/Lightstreamer-example-StockList-client-dotnet)
@@ -75,6 +75,8 @@ To build and install a version of this demo, pointing to your local Lightstreame
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer .NET Standard Client library version 5.0.0 or newer.
-- For instructions compatible with .NET Standard Client library version 4.x, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-dotnet/releases/tag/deploy_std1).
+- Compatible with Lightstreamer .NET Standard Client Library version 6 or newer.
+- Compatible with Lightstreamer Server 7.3.2 or newer.
+- For a version of this demo compatible with Lightstreamer .NET Standard Client Library version 5.x, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-dotnet/releases/tag/for_version_5).
+- For a version of this demo compatible with .NET Standard Client library version 4.x, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-dotnet/releases/tag/deploy_std1).
 - Ensure that .NET Standard Client API is supported by Lightstreamer Server license configuration.
