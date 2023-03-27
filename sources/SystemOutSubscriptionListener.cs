@@ -71,12 +71,12 @@ namespace TwoLevelPush_Example
             }
         }
 
-        public void onListenEnd(Subscription subscription)
+        public void onListenEnd()
         {
             Console.WriteLine("Stop listeneing to subscription events");
         }
 
-        public void onListenStart(Subscription subscription)
+        public void onListenStart()
         {
             Console.WriteLine("Start listeneing to subscription events");
         }

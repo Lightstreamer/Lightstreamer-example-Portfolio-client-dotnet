@@ -40,12 +40,12 @@ namespace TwoLevelPush_Example
             return sessionStarted;
         }
 
-        public void onListenEnd(LightstreamerClient client)
+        public void onListenEnd()
         {
             // throw new NotImplementedException();
         }
 
-        public void onListenStart(LightstreamerClient client)
+        public void onListenStart()
         {
             // throw new NotImplementedException();
         }
@@ -77,13 +77,6 @@ namespace TwoLevelPush_Example
                 if (!Program.myClient.connectionDetails.SessionId.Equals(""))
                 {
                     Console.WriteLine("New Session ID: " + Program.myClient.connectionDetails.SessionId + ".");
-                }
-            }
-            if (property.Equals("currentConnectTimeout"))
-            {
-                if (Program.myClient.connectionOptions.CurrentConnectTimeout > 0)
-                {
-                    Console.WriteLine("New Connect Timeout: " + Program.myClient.connectionOptions.CurrentConnectTimeout + ".");
                 }
             }
         }
